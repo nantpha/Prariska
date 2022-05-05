@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <div class="container">
+    <input type="file" class="fileBtn"  (change)="onChange($event.target.files)" />
+    <button type="button" class="custombtn" (click)="formate()">PreviewQuestions</button>&nbsp;
+    <div class="row">
+      <small *ngIf="showError" style="margin: 0px 0px 0px 269px" class="text text-danger">Please Upload questions</small>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div *ngIf="eachQuestions" class="form-group">
+      <div *ngFor="let question of questionOptions">
+        <div *ngIf=" question.options[0]">
+          <h6>{{question.question }}</h6>
+          <input type="radio" #optin1 (change)="optionValue($event)" id="{{question.id}}" name="{{question.id}}"
+            [value]="question.options[0]" id="{{question.id}}">
+          {{question.options[0]}}<br/>
+          <input type="radio" #optin2 (change)="optionValue($event)" id="{{question.id}}" name="{{question.id}}"
+            [value]="question.options[1]" id="{{question.id}}">
+          {{question.options[1]}}<br/>
+          <input type="radio" #optin3 (change)="optionValue($event)" id="{{question.id}}" name="{{question.id}}"
+            [value]="question.options[2]" id="{{question.id}}">
+          {{question.options[2]}}<br/>
+          <input type="radio" #optin4 (change)="optionValue($event)" id="{{question.id}}" name="{{question.id}}"
+            [value]="question.options[3]" id="{{question.id}}">
+          {{question.options[3]}}<br/>
+        </div>
+        <br/>
+      </div>
+    </div>
+    <p *ngIf="message" class="text text-success">{{message}}</p>
+
+  </div>
+
+</div>

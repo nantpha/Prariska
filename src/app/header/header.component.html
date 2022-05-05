@@ -1,0 +1,62 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-color">
+  <a class="navbar-brand" href="#">
+    <img src="assets/scheduling.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    HaCkeRank</a>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav">
+
+      <li class="nav-item active">
+        <a class="nav-link" routerLinkActive="active"  routerLink="">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" *ngIf="this.loginService.isMphasisUserLoggedIn"
+           routerLink="scores">Scores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" *ngIf="this.loginService.isMphasisUserLoggedIn"
+           routerLink="candidate">Candidate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" *ngIf="this.loginService.isMphasisUserLoggedIn"
+           routerLink="charts">Statistics</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" *ngIf="this.loginService.isMphasisUserLoggedIn"
+           routerLink="about">About</a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0" [ngClass]="{myform: loginService.successLogin, initialClass:!loginService.successLogin}">
+      <li><a  class="btn-signin" (click)="login()" style="
+    top: 7px;
+    right: 40px;
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a,#42455a), radial-gradient(circle at top left, #fd00da,#19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    cursor: pointer;
+    ;
+"><span>{{btnName}}</span></a></li> &nbsp;
+      <li><a class="btn-register" *ngIf="!loginService.successLogin" (click)="register()" style="
+    top: 7px;
+    right: 140px;
+    position: absolute;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a,#42455a), radial-gradient(circle at top left, #fd00da,#19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    cursor: pointer;
+" > <span style=" display: block;
+  padding: 8px 22px;">Register</span></a></li>
+    </form>
+
+  </div>
+</nav>

@@ -1,0 +1,32 @@
+<div *ngIf="data.eventName === 'nextpage'">
+  <h2 mat-dialog-title>Hacker Earth</h2>
+  <mat-dialog-content class="mat-typography">
+    <h3>New Tab opening is not allowed</h3>
+    <p>You Can't open other pages except this Quiz page</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+  </mat-dialog-actions>
+</div>
+<div *ngIf="data.eventName==='ctrl'">
+  <h2 mat-dialog-title>Hacker Earth</h2>
+  <mat-dialog-content class="mat-typography">
+    <h3>Copy and Paste is not allowed</h3>
+    <p>Ctrl+c or Ctrl+V Copy & Paste are not allowed</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+  </mat-dialog-actions>
+
+</div>
+<div *ngIf="data.dialogText==='emailDialog'">
+  <h2 mat-dialog-title>Hacker Earth</h2>
+  <mat-dialog-content class="mat-typography">
+    <h3>Email Status</h3>
+    <p style="color:green">Email Sent to Candidate Successfully</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-stroked-button mat-dialog-close color="primary" cdkFocusInitial>Close</button>
+  </mat-dialog-actions>
+
+</div>
